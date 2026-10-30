@@ -7,9 +7,123 @@
 
   <link rel="stylesheet" href="https://pyscript.net/releases/2024.3.1/core.css">
   <script type="module" src="https://pyscript.net/releases/2024.3.1/core.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: black;
+      margin: 20px;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 40px auto;
+      padding: 20px;
+      border: 1px solid black;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 5px;
+      margin-bottom: 8px;
+      font-size: 26px;
+    }
+
+    .subtitle {
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 16px;
+      font-weight: normal;
+    }
+
+    .instructions {
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.5;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 8px;
+      border: 1px solid gray;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid black;
+      background-color: white;
+      color: black;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #eeeeee;
+    }
+
+    #result {
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid gray;
+    }
+
+    #result h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    #result p {
+      text-align: left;
+      line-height: 1.8;
+      margin-bottom: 5px;
+    }
+
+    footer {
+      margin-top: 25px;
+      text-align: center;
+      font-size: 12px;
+    }
+  </style>
 </head>
 <body>
   
+  <div class="container">
+    <h1>Periodic Table Finder</h1>
+    <h3 class="subtitle">Non-Metal Element Information</h3>
+    <p class="instructions">Enter an element symbol to find its name, atomic number, and atomic mass.</p>
+
+    <label>Element Symbol</label>
+      <input type="text" id="element" placeholder="e.g., H, Cl, Kr">
+
+    <button id="check" py-click="check">Check</button>
+
+    <div id="result">
+      <h3>Element Information</h3>
+
+      <p>Symbol: <span id="symbol">-</span></p>
+      <p>Name: <span id="name">-</span></p>
+      <p>Atomic Number: <span id="number">-</span></p>
+      <p>Atomic Mass: <span id="mass">-</span></p>
+
+    </div>
+
+    <footer>
+      Periodic Table Information Finder
+    </footer>
+  </div>
+
   <script type="py" src="main.py"></script>
 </body>
 </html>
