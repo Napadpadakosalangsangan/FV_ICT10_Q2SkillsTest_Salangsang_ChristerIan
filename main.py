@@ -1,5 +1,6 @@
 from pyscript import document, display
 
+# Dictionary of non-metals
 non_metals = {
   "H":  ("Hydrogen", 1, 1.008),
   "He": ("Helium", 2, 4.003),
@@ -20,18 +21,23 @@ non_metals = {
   "Rn": ("Radon", 86, 222)
 }
 
+
 def check(e):
 
+ # Getting the entered element symbol
   symbol = document.getElementById("element").value.capitalize()
 
+# Retrieving the element's information from the dictionary above
   result = non_metals.get(symbol, ("Element not found", "-", "-"))
   name, number, mass = result
 
+# Getting the HTML elements where the results will be displayed
   symbol_input = document.getElementById("symbol")
   name_input = document.getElementById("name")
   number_input = document.getElementById("number")
   mass_input = document.getElementById("mass")
 
+# Displaying the information
   symbol_input.innerText = symbol
   name_input.innerText = name
   number_input.innerText = number
